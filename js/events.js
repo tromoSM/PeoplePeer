@@ -1,3 +1,41 @@
 window.addEventListener("DOMContentLoaded",function(){
     document.querySelector(`[tromoSM="SUBALL"]`).addEventListener("click",POSTSUB)
+document.querySelector(`[sign='in']`).addEventListener("click",function(){
+    signE()
+})
+document.querySelector(`[sign='up']`).addEventListener("click",function(){
+    signUP()
+})
+document.querySelector(`[val="passin"]`).addEventListener("keydown",function(dih){
+    if(dih.key=='Enter'){
+        signE()
+    }
+})
+
+document.querySelector(`[val="mailin"]`).addEventListener("keydown",function(dih){
+    if(dih.key=='Enter'){
+     document.querySelector(`[val="passin"]`).focus()
+    }
+})
+document.querySelector("[opt='up']").addEventListener('click',function(){
+    document.querySelector("inner").setAttribute("flipped",``)
+})
+document.querySelector("[opt='in']").addEventListener('click',function(){
+    document.querySelector("inner").removeAttribute("flipped")
+})
+document.querySelectorAll('[button="google"]').forEach(gurt=>{
+    gurt.addEventListener("click",function(){
+        loginG()
+    })
+})
+document.querySelector(`[val="passup"]`).addEventListener("keydown",function(dih){
+    if(dih.key=='Enter'){
+        signUP()
+    }
+})
+document.querySelector(`[val="mailup"]`).addEventListener("keydown",function(dih){
+    if(dih.key=='Enter'){
+     document.querySelector(`[val="passup"]`).focus()
+    }
+})
 })
