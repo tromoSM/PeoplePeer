@@ -24,5 +24,24 @@ window.addEventListener("DOMContentLoaded",function(){
 
        refresh$$ico()
     }
+    window.loader=function(dihh,dih){
+        let temp$$el$$not=document.createElement(`notify`)
+        let temp$$el$$spi=document.createElement('div')
+        temp$$el$$spi.className="spinner"
+        for(let dh=0;dh<12;dh++){
+        let temp$$el$$each=document.createElement("div")
+        temp$$el$$each.className=`bar${dh}`
+        temp$$el$$spi.appendChild(temp$$el$$each)
+        }
+        let temp$$el$$ms=document.createElement("message")
+        temp$$el$$ms.innerHTML=dihh
+        temp$$el$$spi.appendChild(temp$$el$$ms)
+        temp$$el$$not.appendChild(temp$$el$$spi)
+        if(dih=="s"){
+         document.body.appendChild(temp$$el$$not)
+        }
+        else{
+            document.body.remove(temp$$el$$not)
+        }
+    }
 })
-
