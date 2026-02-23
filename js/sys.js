@@ -24,11 +24,13 @@ window.addEventListener("DOMContentLoaded",function(){
 
        refresh$$ico()
     }
+
     window.loader=function(dihh,dih){
+      if(dih.toLowerCase()=="s"){
         let temp$$el$$not=document.createElement(`notify`)
         let temp$$el$$spi=document.createElement('div')
         temp$$el$$spi.className="spinner"
-        for(let dh=0;dh<12;dh++){
+        for(let dh=1;dh<13;dh++){
         let temp$$el$$each=document.createElement("div")
         temp$$el$$each.className=`bar${dh}`
         temp$$el$$spi.appendChild(temp$$el$$each)
@@ -37,11 +39,14 @@ window.addEventListener("DOMContentLoaded",function(){
         temp$$el$$ms.innerHTML=dihh
         temp$$el$$spi.appendChild(temp$$el$$ms)
         temp$$el$$not.appendChild(temp$$el$$spi)
-        if(dih=="s"){
-         document.body.appendChild(temp$$el$$not)
+        document.body.appendChild(temp$$el$$not)
+        temp$$$active$$r=temp$$el$$not
+    }
+    else{
+        if(temp$$$active$$r){
+            temp$$$active$$r.remove()
+            temp$$$active$$r=null
         }
-        else{
-            document.body.remove(temp$$el$$not)
-        }
+    }
     }
 })
